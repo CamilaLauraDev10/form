@@ -6,14 +6,16 @@ import useGetInputs from '../hooks/useGetInputs';
 
 function FormData({inputData, type, submitForm}) {
   const inputs = useGetInputs(inputData, type,submitForm);
+
+  const handleSubmit = (event) => {
+    const data = new FormData(event.target)
+    console.log(data);
+  }
+
     return(
     <Box>
       <Paper padding="10px" >
-        <form onSubmit={event => {
-          event.preventDefault();
-          const value = event.target.student.value;
-          console.log(value);
-        }}>
+        <form onSubmit={handleSubmit}>
           <Typography
             variant='h1'
             color="secondary.light"

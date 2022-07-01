@@ -4,7 +4,7 @@ import theme from "../theme/theme.js"
 import FormData from '../Form';
 import getInputFields from '../helper/getInputFields.js';
 
-const type = "student";
+const type = "subject";
 const dataForm = getInputFields(type);
 
 function App() {

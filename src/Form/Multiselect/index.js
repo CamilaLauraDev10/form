@@ -37,8 +37,8 @@ function MultiSelect({days}) {
           id="demo-multiple-checkbox"
           multiple
           type="select"
-         // value={day}
-         // onChange={handleChange}
+         value={day}
+         onChange={handleChange}
           input={<OutlinedInput  />}
           renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}
