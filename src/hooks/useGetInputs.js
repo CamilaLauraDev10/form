@@ -6,20 +6,19 @@ import validateInfo from "../helper/validateInputValues";
 import useForm from ".";
 
 function useGetInputs(inputData, type,submitForm ) {
-  const { handleChange, handleSubmit, values, errors } = useForm(
-    submitForm,
-    validateInfo,
-    inputData,
-    type
-  );
+  // const { handleChange, handleSubmit, values, errors } = useForm(
+  //   submitForm,
+  //   validateInfo,
+  //   inputData,
+  //   type
+  // );
 
-  console.log( values );
   const inputs = [];
     inputData.map( (element)=> {
         if (element.type === "select") {
             inputs.push(<div key={1} >
                          <br/>
-                         <MultiSelect key={2} days={element.days} onChange={handleChange}/>
+                         <MultiSelect key={2} days={element.days}/>
                          <span>{element.errorMessage}</span>
                       </div>);
          
@@ -27,7 +26,7 @@ function useGetInputs(inputData, type,submitForm ) {
         if (element.type === "autocomplete") {
           inputs.push(<div key={3}>
                         <br/>
-                        <CustumAutocomplete key={4} countries={element.countries} onChange={handleChange}/>
+                        <CustumAutocomplete key={4} countries={element.countries} />
                       </div>);
           
         }
@@ -43,7 +42,6 @@ function useGetInputs(inputData, type,submitForm ) {
                             type={element.type}
                             helperText={element.placeholder}
                             variant="outlined"
-                            onChange={handleChange}
                             fullWidth
                           />
                         </Tooltip>
@@ -51,10 +49,7 @@ function useGetInputs(inputData, type,submitForm ) {
         }
         return inputs;
       })
-    return {
-      inputs,
-      handleSubmit
-    };
+    return inputs
 }
 
 export default useGetInputs;

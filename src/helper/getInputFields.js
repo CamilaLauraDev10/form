@@ -43,7 +43,7 @@ const courseForm = [
 
 const studentForm = [
   {
-    id: "name-student-field",
+    id: "nameStudentField",
     name: "student",
     placeholder: "Enter the student's name",
     type: "text",

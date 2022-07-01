@@ -5,12 +5,15 @@ import PhotoChooser from './PhotoChooser'
 import useGetInputs from '../hooks/useGetInputs';
 
 function FormData({inputData, type, submitForm}) {
-  const {inputs, handleSubmit } = useGetInputs(inputData, type,submitForm);
-  
+  const inputs = useGetInputs(inputData, type,submitForm);
     return(
     <Box>
       <Paper padding="10px" >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={event => {
+          event.preventDefault();
+          const value = event.target.student.value;
+          console.log(value);
+        }}>
           <Typography
             variant='h1'
             color="secondary.light"

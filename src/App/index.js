@@ -14,7 +14,7 @@ function App() {
       <div key={100}>
       {!isSubmited ? (
         <FormData inputData={dataForm} type={type} submitForm={() => setIsSubmited(true)}     />
-      ) : (<p>es un ganso</p>
+      ) : (<p>no paso nada</p>
       )}
     </div>
     </ThemeProvider>
