@@ -4,7 +4,7 @@ import { CustomButtonAccept } from "../../theme/CustumButtons/index";
 import { StyledBox, StyledImg} from './style';
 
 
-function PhotoChooser() { //poner en cutom hook context
+function PhotoChooser( ) { //poner en cutom hook context
     const [imgData, setImgData] = useState(
        "https://cdn-icons-png.flaticon.com/512/1184/1184978.png"
       );

@@ -20,13 +20,11 @@ const MenuProps = {
 
 function MultiSelect({days}) {
   const [day, setDay] = React.useState([]);
-
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
     setDay(
-      // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
   };
@@ -38,8 +36,9 @@ function MultiSelect({days}) {
           labelId="demo-multiple-checkbox-label"
           id="demo-multiple-checkbox"
           multiple
-          value={day}
-          onChange={handleChange}
+          type="select"
+         // value={day}
+         // onChange={handleChange}
           input={<OutlinedInput  />}
           renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}

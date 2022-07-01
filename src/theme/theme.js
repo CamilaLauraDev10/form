@@ -75,13 +75,12 @@ const theme = createTheme({
         styleOverrides:{
           root: {
             '& .MuiTextField-root': {
-              margin: "10px",
-              width: "900px",
+              width: "100%",
             }
           }
         }
       }
-    }
+    },
 });
   
 // theme.typography.h3 = {
